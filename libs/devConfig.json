@@ -1,0 +1,12 @@
+{
+	"dbUrl":"mongodb://localhost:27017/demoProject",
+	"dbs" : {
+		"demoProject": "demoProject"
+	},
+	"collections" : {
+		"demoProject": {
+			"users"		: "users",
+            "todoList" 	: "todoList"
+        }
+    }
+}
