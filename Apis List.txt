@@ -1,0 +1,97 @@
+List of Apis Created:-
+--------------------
+
+Authorization: 'jwt token to be passed from user login api response' -> keyname : jwtToken
+
+1) Create User
+	Url:- http://localhost:3000/api/user/createUser
+	Method:- POST
+	Request:- {
+				"userName" : "manoj1991",
+				"password" : "test"
+			}
+
+2) Login User
+	Url:- http://localhost:3000/api/user/login
+	Method:- POST
+	Request:- {
+				"userName" : "manoj1990",
+				"password" : "test"
+			}
+	
+	Response:- {
+					"message": "login credentials are valid",
+					"status": 200,
+					"data": {
+						"userName": "manoj1990",
+						"email": null,
+						"userId": "UD_5eac2dcf540ad61430666bc6",
+						"jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJtYW5vajE5OTAiLCJpYXQiOjE1ODgzNTk5NzEsImV4cCI6MTU4ODM2MzU3MX0.arEdfw___wKuwbn3-Y8IcGd3KyPUCzKFH-wFq_3O03M"
+					}
+				}
+
+3) Create ToDo Item
+	Url:- http://localhost:3000/api/todo/createList
+	Method:- POST
+	Request:-
+				{
+					"taskName"  : "test",
+					"time"      : "01/05/2020",
+					"notes"     : "test2",
+					"ownerEmail" : "kanumurumanoj@gmail.com"
+				}
+	headers : {
+		Authorization: 'asdfajnjrewrwrxzsrgdf'
+	}
+4) GET ToDo Item
+	Url:- http://localhost:3000/api/todo/getItem?taskId=Task_5eac48b134080e15e420220b
+	Method:- GET
+	Request:- passed in query pararms
+	headers : {
+		Authorization: 'asdfajnjrewrwrxzsrgdf'
+	}
+
+5) GET All ToDo Items
+	Url:- http://localhost:3000/api/todo/itemList
+	Method:- POST 
+	Request:- {
+			"taskIds" : ["Task_5eac48b134080e15e420220b","Task_5eac4b66ccdc940af01c6de1"]	
+		}
+	headers : {
+		Authorization: 'asdfajnjrewrwrxzsrgdf'
+	}
+
+6) Update ToDo Item
+	Url:-  http://localhost:3000/api/todo/updateItem
+	Method:- PUT
+	Request:- {
+			"taskId" : "Task_5eac4b66ccdc940af01c6de1",
+			"updateKeys": {
+				"taskName" : "test222",
+				"notes" : "test234"
+			}
+		}
+	headers : {
+		Authorization: 'asdfajnjrewrwrxzsrgdf'
+	}
+7) Delete ToDo Item
+	Url:- http://localhost:3000/api/todo/deleteItem
+	Method:- DELETE
+	Request:- {
+			"taskId" : "Task_5eac5102ed7f5a1878ed23b2"
+		}
+	headers : {
+		Authorization: 'asdfajnjrewrwrxzsrgdf'
+	}
+
+8) Delete User
+	Url:- http://localhost:3000/api/user/deleteUser
+	Method:- DELETE
+	Request:- {
+				"userName" : "manoj1991"
+			}
+
+Setup:-
+----
+
+1) To run in local Node & MongoDB to be installed
